@@ -2,13 +2,13 @@ using (var client = new HttpClient())
 {
     var request = new HttpRequestMessage()
     {
-        RequestUri = new Uri("https://az-uks-sbx-det111-appconfig.azconfig.io/kv?api-version=1.0"),
+        RequestUri = new Uri("https://{appconfig}.azconfig.io/kv?api-version=1.0"),
         Method = HttpMethod.Get
     };
 
     //
     // Sign the request
-    request.Sign("NQer-lo-s0:sFCuLdkNmLPQiJKejVB1", "l1wZTfxZCLSbuiz/t1FHZKWQYkcNGIVofctHYkNHPS0=");
+    request.Sign("<appconfig-id>", "<appconfig-secret");
 
     await client.SendAsync(request);
 }
